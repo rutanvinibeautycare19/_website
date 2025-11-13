@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Courses - Rutanvini Beauty Care</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    .main-header {
+      background-color: #d63384;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      color: white;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ffd9ec;
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* Main content */
+    main {
+      padding: 50px 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2.4rem;
+      color: #d63384;
+    }
+
+    p.intro {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+      color: #444;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .course-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .course {
+      background: #ffffffcc; /* translucent white */
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      width: 280px;
+      padding: 25px 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .course:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .course img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .course h3 {
+      margin: 10px 0;
+      color: #d63384;
+    }
+
+    .course p {
+      font-size: 14px;
+      color: #444;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      margin-top: 10px;
+      background: #d63384;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #e478b0;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 600px;
+      position: relative;
+    }
+
+    .modal-content h2 {
+      color: #d63384;
+      margin-bottom: 10px;
+    }
+
+    .modal-content p {
+      color: #444;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .close {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      font-size: 22px;
+      cursor: pointer;
+      color: #333;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .course {
+        width: 90%;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      /* Hamburger Menu */
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: #d63384;
+        padding: 10px 0;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-top: 1px solid #ffd9ec33;
+        margin-left: 0;
+      }
+
+      .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* Footer */
+    footer {
+      background-color: #ee9ca7;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="logo">Rutanvini</div>
+    <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    <nav class="nav-links" id="navLinks">
+      <a href="about.html">About Us</a>
+      <a href="course.html">Our Courses</a>
+      <a href="cont.html">Book Appointment</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <h2>Our Professional Beauty Courses</h2>
+    <p class="intro">
+      At <strong>Rutanvini Beauty Care</strong>, we provide hands-on training with expert guidance.
+      Whether you are a beginner or looking to advance your skills, our courses help you build a strong and successful career in the beauty industry.
+    </p>
+
+    <div class="course-container">
+      <!-- Course 1 -->
+      <div class="course">
+        <img src="img_1.webp" alt="Makeup Course" />
+        <h3>Professional Makeup</h3>
+        <p>Learn bridal, party, and HD makeup techniques. Duration: 3 Months</p>
+        <button class="btn" onclick="openModal('makeup')">View Details</button>
+      </div>
+
+      <!-- Course 2 -->
+      <div class="course">
+        <img src="img_2.webp" alt="Facial Course" />
+        <h3>Facial & Skin Care</h3>
+        <p>Master facial treatments & skin therapies. Duration: 2 Months</p>
+        <button class="btn" onclick="openModal('facial')">View Details</button>
+      </div>
+
+      <!-- Course 3 -->
+      <div class="course">
+        <img src="img_4.avif" alt="Hair Styling Course" />
+        <h3>Hair Styling</h3>
+        <p>From cutting to advanced styling & treatments. Duration: 4 Months</p>
+        <button class="btn" onclick="openModal('hair')">View Details</button>
+      </div>
+
+      <!-- Course 4 -->
+      <div class="course">
+        <img src="img_3.jpg" alt="Eyebrow Course" />
+        <h3>Eyebrow & Lash Art</h3>
+        <p>Perfect shaping, tinting & lash extensions. Duration: 1 Month</p>
+        <button class="btn" onclick="openModal('brows')">View Details</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modals -->
+  <div id="makeup" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('makeup')">&times;</span>
+      <h2>Professional Makeup Course</h2>
+      <p><b>Duration:</b> 3 Months</p>
+      <p><b>Highlights:</b> Bridal makeup, HD makeup, Party looks, Product knowledge, Practical sessions.</p>
+      <p><b>Eligibility:</b> Open for beginners and professionals.</p>
+      <p><b>Career Scope:</b> Work as a freelance MUA or with salons/brands.</p>
+    </div>
+  </div>
+
+  <div id="facial" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('facial')">&times;</span>
+      <h2>Facial & Skin Care</h2>
+      <p><b>Duration:</b> 2 Months</p>
+      <p><b>Highlights:</b> Skin analysis, Acne & anti-aging treatments, Modern tools.</p>
+      <p><b>Eligibility:</b> Anyone interested in skincare.</p>
+      <p><b>Career Scope:</b> Skin specialist in salons or open your own clinic.</p>
+    </div>
+  </div>
+
+  <div id="hair" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('hair')">&times;</span>
+      <h2>Hair Styling Course</h2>
+      <p><b>Duration:</b> 4 Months</p>
+      <p><b>Highlights:</b> Hair cutting, Styling techniques, Treatments, Product knowledge.</p>
+      <p><b>Eligibility:</b> Open to beginners and experienced stylists.</p>
+      <p><b>Career Scope:</b> Work in salons, freelance styling, or open your own salon.</p>
+    </div>
+  </div>
+
+  <div id="brows" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('brows')">&times;</span>
+      <h2>Eyebrow & Lash Art</h2>
+      <p><b>Duration:</b> 1 Month</p>
+      <p><b>Highlights:</b> Shaping, Tinting, Lash extensions, Care & maintenance.</p>
+      <p><b>Eligibility:</b> Anyone interested in beauty treatments.</p>
+      <p><b>Career Scope:</b> Work in spas, salons, or start your own service.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © <span id="year"></span> Rutanvini Beauty Care. All rights reserved.
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Hamburger menu toggle
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+
+    // Close menu when link clicked (mobile UX)
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("active");
+      });
+    });
+
+    // Modal open function
+    function openModal(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+
+    // Modal close function
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    // Close modal if clicking outside modal content
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

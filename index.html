@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#d63384" />
+  <title> Rutanvini Beauty Care</title>
+  <style>
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      color: #333;
+      min-height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: #d63384;
+      color: white;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 5px 0;
+    }
+
+    nav ul li a {
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 8px 12px;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffd9ec;
+    }
+
+    /* Hero */
+    .hero {
+      background: url("background.webp") no-repeat center center/cover;
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      margin: 20px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #ffffffcc;
+      color: #d63384;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background 0.3s, transform 0.3s;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      background: #ffd9ec;
+      transform: scale(1.05);
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 2.4rem;
+      color: #d63384;
+      margin-bottom: 30px;
+    }
+
+    section p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto 20px auto;
+      color: white;
+    }
+
+    /* Cards */
+    .service-container,
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: 40px auto;
+    }
+
+    .service-card,
+    .gallery-container a {
+      background: #ffffffcc;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+    }
+
+    .service-card img,
+    .gallery-container img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .service-card:hover img,
+    .gallery-container img:hover {
+      transform: scale(1.1);
+    }
+
+    .service-card:hover,
+    .gallery-container a:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    }
+
+    .service-card h3 {
+      padding: 15px;
+      font-size: 1.3rem;
+      color: #d63384;
+    }
+
+    /* Contact Section */
+    #contact {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    #contact p {
+      font-size: 1rem;
+      font-weight: 500;
+      margin: 10px 0;
+      color: #444;
+    }
+
+    #contact a {
+      color: #d63384;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #ee9ca7;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        height: 70vh;
+        padding: 0 10px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      nav ul li {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav .logo {
+        font-size: 1.5rem;
+      }
+
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+
+      .hero p {
+        font-size: 0.9rem;
+      }
+
+      .service-card img,
+      .gallery-container img {
+        height: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Rutanvini</div>
+    <ul>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="course.html">Our Courses</a></li>
+      <li><a href="cont.html">Book Appointment</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Rutanvini Beauty Care</h1>
+      <p>Enhancing your beauty with love, care & style ✨</p>
+      <a href="rutanvini_qr.html" class="btn">Book Appointment</a>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>Our Work Gallery</h2>
+    <div class="gallery-container">
+      <a href="makeup.html"><img src="1.webp" alt="Makeup Look" loading="lazy"></a>
+      <a href="facial.html"><img src="4.jpg" alt="Facials" loading="lazy"></a>
+      <a href="hairstyles.html"><img src="2.jpg" alt="Hair Styling" loading="lazy"></a>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>SONAL SOLANKI</strong></p>
+    <p><strong>📍 Address:</strong> K-102, Rajanand Dwelling, near Bansal Mall, Danteshwar, Vadodara</p>
+    <p><strong>📞 Phone:</strong> <a href="tel:+919662520800">+91 9662520800</a></p>
+    <p><strong>📧 Email:</strong> <a href="mailto:rutanvini@gmail.com">rutanvini@gmail.com</a></p>
+    <p><strong>📸 Instagram:</strong> <a href="https://www.instagram.com/rutanvini" target="_blank">@rutanvini</a></p>
+    <a href="rutanvini_qr.html" class="btn">Book Appointment</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Rutanvini Beauty Care | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>

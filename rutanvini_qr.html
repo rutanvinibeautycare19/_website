@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WhatsApp QR - Rutanvini Beauty Care</title>
+
+  <style>
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
+      background: #fff0f5;
+    }
+
+    /* Header */
+    .main-header {
+      background-color: #d63384;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      color: white;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ffd9ec;
+    }
+
+    /* Main Content */
+    main {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    main h1 {
+      color: #d63384;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    main p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .qr-box {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 400px;
+      margin: 0 auto;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+
+    .qr-box img {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #d63384;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #e478b0;
+    }
+
+    footer {
+      background-color: #ee9ca7;
+      color: white;
+      text-align: left;
+      padding: 25px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 600px) {
+      .qr-box {
+        padding: 20px;
+      }
+
+      main h1 {
+        font-size: 2rem;
+      }
+
+      .qr-box img {
+        width: 160px;
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="logo">Rutanvini</div>
+    <nav class="nav-links">
+      <a href="about.html">About Us</a>
+      <a href="course.html">Our Courses</a>
+      <a href="cont.html">Book Appointment</a>
+      
+    </nav>
+  </header>
+
+  <!-- Main Section -->
+  <main>
+    <h1>Connect With Us on WhatsApp</h1>
+    <p>Scan the QR code below to start a chat with us on WhatsApp. We’re here to help you with appointments, course inquiries, and more!</p>
+
+    <div class="qr-box">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://wa.me/919662520800" alt="WhatsApp QR Code" />
+      <p><strong>WhatsApp: +91 96625 20800</strong></p>
+      <a class="btn" href="https://wa.me/919662520800" target="_blank">Chat Now</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Rutanvini Beauty Care | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>

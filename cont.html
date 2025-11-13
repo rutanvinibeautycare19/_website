@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book Appointment - Rutanvini Beauty Care</title>
+  <style>
+    /* Reset and Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    header {
+      background-color: #d63384;
+      color: white;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffd9ec;
+    }
+
+    /* Main Content */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 20px;
+    }
+
+    h1 {
+      color: #d63384;
+      margin-bottom: 40px;
+      font-size: 2.6rem;
+      text-align: center;
+    }
+
+    /* Contact Cards Container */
+    .contact-cards {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 1100px;
+      width: 100%;
+    }
+
+    /* Individual Contact Card */
+    .card {
+      background: #ffffffcc;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      width: 220px;
+      padding: 30px 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: #d63384;
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+      color: #b0266d;
+    }
+
+    .icon {
+      font-size: 60px;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .icon {
+      transform: scale(1.2) rotate(10deg);
+    }
+
+    .label {
+      font-size: 20px;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+
+    .contact-info {
+      font-size: 1rem;
+      color: #444;
+      word-break: break-word;
+      text-align: center;
+    }
+
+    .card .icon img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .card {
+        width: 180px;
+        padding: 25px 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 300px;
+        padding: 20px;
+      }
+
+      .icon {
+        font-size: 48px;
+      }
+
+      .label {
+        font-size: 16px;
+      }
+
+      .contact-info {
+        font-size: 0.9rem;
+      }
+
+      .card .icon img {
+        width: 70px;
+        height: 70px;
+      }
+    }
+
+    /* Footer */
+    footer {
+      background-color: #ee9ca7;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <div class="logo">Rutanvini</div>
+    <nav>
+      <a href="about.html">About Us</a>
+      <a href="course.html">Our Courses</a>
+      <a href="cont.html">Book Appointment</a>
+    </nav>
+  </header>
+
+  <!-- Main Section -->
+  <main>
+    <h1>Book Your Appointment</h1>
+
+    <div class="contact-cards">
+
+      <a href="mailto:rutanvini@gmail.com" class="card" title="Email Us">
+        <div class="icon">📧</div>
+        <div class="label">Email Us</div>
+        <div class="contact-info">rutanvini@gmail.com</div>
+      </a>
+
+      <a href="https://wa.me/919662520800" target="_blank" rel="noopener noreferrer" class="card" title="Chat on WhatsApp">
+        <div class="icon">💬</div>
+        <div class="label">WhatsApp</div>
+        <div class="contact-info">+91 9662520800</div>
+      </a>
+
+      <a href="tel:+919662520800" class="card" title="Call Us">
+        <div class="icon">📞</div>
+        <div class="label">Call Us</div>
+        <div class="contact-info">+91 9662520800</div>
+      </a>
+
+      <a href="https://www.instagram.com/rutanvini" target="_blank" rel="noopener noreferrer" class="card" title="Instagram">
+        <div class="icon">📸</div>
+        <div class="label">Instagram</div>
+        <div class="contact-info">@rutanvini</div>
+      </a>
+
+    
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Rutanvini Beauty Care | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>

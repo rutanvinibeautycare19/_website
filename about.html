@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Rutanvini Beauty Care</title>
+  <style>
+    body {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+    }
+
+    .main-header {
+      background-color: #d63384;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      color: white;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 1.1rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ffd9ec;
+    }
+
+    .about-section {
+      max-width: 1000px;
+      margin: 130px auto 50px auto;
+      padding: 40px;
+      background: #ffffffcc;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      text-align: center;
+    }
+
+    .about-section h1 {
+      color: #d63384;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    .about-section p {
+      font-size: 1.1rem;
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    .highlight {
+      color: #d63384;
+      font-weight: bold;
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .gallery img {
+      width: 250px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #ee9ca7;
+      color: white;
+      text-align: left;
+      padding: 25px;
+      width: 100%;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 600px;
+      text-align: left;
+      position: relative;
+    }
+
+    .modal-content h2 {
+      color: #d63384;
+    }
+
+    .close {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #333;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 10px;
+      }
+
+      .nav-links a {
+        margin: 10px 0 0 0;
+        font-size: 1rem;
+      }
+
+      .about-section {
+        margin: 100px 20px 50px 20px;
+        padding: 30px 20px;
+      }
+
+      .about-section h1 {
+        font-size: 2rem;
+      }
+
+      .about-section p {
+        font-size: 1rem;
+      }
+
+      .gallery img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .about-section {
+        margin-top: 80px;
+        padding: 20px 15px;
+      }
+
+      .about-section h1 {
+        font-size: 1.7rem;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+      }
+
+      footer {
+        font-size: 0.9rem;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="logo">Rutanvini</div>
+    <nav class="nav-links">
+      <a href="about.html">About Us</a>
+      <a href="course.html">Our Courses</a>
+      <a href="cont.html">Book Appointment</a>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <div class="about-section">
+    <h1>About Us – Rutanvini Beauty Care ✨</h1>
+    <p>At <span class="highlight">Rutanvini Beauty Care</span>, we believe beauty is about enhancing what you already have and letting your true self shine.</p>
+    <p>Founded with a passion for artistry and elegance, <span class="highlight">Rutanvini</span> has been helping clients look and feel their best for every occasion – from weddings and parties to casual celebrations.</p>
+    <p>Our services include <b>makeup, skincare, and beauty treatments</b>, all delivered with a personal touch and high-quality products. Whether you want a <i>natural everyday glow</i> or a <i>glamorous makeover</i>, we ensure you step out with confidence.</p>
+    <p>🌸 <b>Your beauty, our passion.</b> 🌸</p>
+    <p><strong>SONAL SOLANKI</strong></p>
+    <p><strong>CONTACT NO: 9662520800</strong></p>
+
+    <!-- Gallery -->
+    <div class="gallery">
+      <a href="makeup.html"><img src="1.webp" alt="Makeup"></a>
+      <a href="hairstyles.html"><img src="2.jpg" alt="Hairstyles"></a>
+      <a href="facial.html"><img src="4.jpg" alt="Beauty care"></a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Rutanvini Beauty Care | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
